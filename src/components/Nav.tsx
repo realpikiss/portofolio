@@ -2,12 +2,14 @@
 
 import { useTranslations, useLocale } from "next-intl";
 import { useRouter, usePathname } from "next/navigation";
+import { useState } from "react";
 
 export default function Nav() {
   const t = useTranslations("nav");
   const locale = useLocale();
   const router = useRouter();
   const pathname = usePathname();
+  const [menuOpen, setMenuOpen] = useState(false);
 
   const switchLocale = () => {
     const nextLocale = locale === "fr" ? "en" : "fr";
@@ -24,117 +26,216 @@ export default function Nav() {
     { key: "contact", href: "#contact" },
   ] as const;
 
+  const closeMenu = () => setMenuOpen(false);
+
   return (
-    <nav
-      style={{
-        position: "fixed",
-        top: 0,
-        left: 0,
-        right: 0,
-        zIndex: 100,
-        borderBottom: "1px solid #1a1a1a",
-        backdropFilter: "blur(12px)",
-        backgroundColor: "rgba(8,8,8,0.85)",
-      }}
-    >
-      <div
+    <>
+      <nav
         style={{
-          maxWidth: 1100,
-          margin: "0 auto",
-          padding: "0 24px",
-          height: 56,
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "space-between",
+          position: "fixed",
+          top: 0,
+          left: 0,
+          right: 0,
+          zIndex: 100,
+          borderBottom: "1px solid #1a1a1a",
+          backdropFilter: "blur(12px)",
+          backgroundColor: "rgba(8,8,8,0.92)",
         }}
       >
-        {/* Logo */}
-        <a
-          href={`/${locale}`}
-          className="mono"
+        <div
           style={{
-            color: "var(--accent)",
-            fontWeight: 700,
-            fontSize: "0.9rem",
-            textDecoration: "none",
-            letterSpacing: "0.05em",
+            maxWidth: 1100,
+            margin: "0 auto",
+            padding: "0 24px",
+            height: 56,
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "space-between",
           }}
         >
-          VA<span style={{ color: "var(--text-dim)" }}>.dev</span>
-        </a>
+          {/* Logo */}
+          <a
+            href={`/${locale}`}
+            className="mono"
+            style={{
+              color: "var(--accent)",
+              fontWeight: 700,
+              fontSize: "0.9rem",
+              textDecoration: "none",
+              letterSpacing: "0.05em",
+              zIndex: 110,
+            }}
+          >
+            VA<span style={{ color: "var(--text-dim)" }}>.dev</span>
+          </a>
 
-        {/* Links */}
-        <div style={{ display: "flex", alignItems: "center", gap: 28 }}>
-          {links.map(({ key, href }) => (
+          {/* Desktop links */}
+          <div className="nav-desktop" style={{ display: "flex", alignItems: "center", gap: 28 }}>
+            {links.map(({ key, href }) => (
+              <a
+                key={key}
+                href={href}
+                className="link-muted"
+                style={{
+                  fontSize: "0.8rem",
+                  letterSpacing: "0.04em",
+                  fontWeight: 500,
+                }}
+              >
+                {t(key)}
+              </a>
+            ))}
+
             <a
-              key={key}
-              href={href}
+              href={`/${locale}/acknowledgements`}
+              className="link-muted"
               style={{
-                color: "var(--text-muted)",
-                textDecoration: "none",
                 fontSize: "0.8rem",
                 letterSpacing: "0.04em",
-                transition: "color 0.15s ease",
                 fontWeight: 500,
               }}
-              onMouseEnter={(e) =>
-                ((e.target as HTMLElement).style.color = "var(--text)")
-              }
-              onMouseLeave={(e) =>
-                ((e.target as HTMLElement).style.color = "var(--text-muted)")
-              }
             >
-              {t(key)}
+              {t("acknowledgements")}
             </a>
-          ))}
 
+            <button
+              onClick={switchLocale}
+              className="mono"
+              style={{
+                background: "transparent",
+                border: "1px solid var(--border)",
+                color: "var(--accent)",
+                padding: "4px 10px",
+                borderRadius: 4,
+                fontSize: "0.7rem",
+                cursor: "pointer",
+                letterSpacing: "0.1em",
+                fontWeight: 700,
+              }}
+            >
+              {t("switchLang")}
+            </button>
+          </div>
+
+          {/* Mobile right: lang + hamburger */}
+          <div className="nav-mobile-right" style={{ display: "none", alignItems: "center", gap: 12 }}>
+            <button
+              onClick={switchLocale}
+              className="mono"
+              style={{
+                background: "transparent",
+                border: "1px solid var(--border)",
+                color: "var(--accent)",
+                padding: "4px 10px",
+                borderRadius: 4,
+                fontSize: "0.7rem",
+                cursor: "pointer",
+                letterSpacing: "0.1em",
+                fontWeight: 700,
+              }}
+            >
+              {t("switchLang")}
+            </button>
+
+            <button
+              onClick={() => setMenuOpen((o) => !o)}
+              style={{
+                background: "transparent",
+                border: "1px solid var(--border)",
+                color: "var(--text)",
+                width: 36,
+                height: 36,
+                borderRadius: 4,
+                cursor: "pointer",
+                display: "flex",
+                flexDirection: "column",
+                alignItems: "center",
+                justifyContent: "center",
+                gap: 5,
+                padding: 0,
+              }}
+              aria-label="Menu"
+            >
+              <span style={{
+                display: "block", width: 16, height: 1.5,
+                background: menuOpen ? "var(--accent)" : "var(--text)",
+                transition: "transform 0.2s ease, opacity 0.2s ease",
+                transform: menuOpen ? "rotate(45deg) translate(3px, 3px)" : "none",
+              }} />
+              <span style={{
+                display: "block", width: 16, height: 1.5,
+                background: "var(--text)",
+                opacity: menuOpen ? 0 : 1,
+                transition: "opacity 0.2s ease",
+              }} />
+              <span style={{
+                display: "block", width: 16, height: 1.5,
+                background: menuOpen ? "var(--accent)" : "var(--text)",
+                transition: "transform 0.2s ease, opacity 0.2s ease",
+                transform: menuOpen ? "rotate(-45deg) translate(3px, -3px)" : "none",
+              }} />
+            </button>
+          </div>
+        </div>
+      </nav>
+
+      {/* Mobile dropdown menu */}
+      <div
+        className="nav-mobile-menu"
+        style={{
+          position: "fixed",
+          top: 56,
+          left: 0,
+          right: 0,
+          zIndex: 99,
+          background: "rgba(8,8,8,0.98)",
+          backdropFilter: "blur(16px)",
+          borderBottom: "1px solid var(--border)",
+          padding: menuOpen ? "20px 24px 28px" : "0 24px",
+          display: "none",
+          flexDirection: "column",
+          gap: 0,
+          overflow: "hidden",
+          maxHeight: menuOpen ? 400 : 0,
+          transition: "max-height 0.3s ease, padding 0.3s ease",
+        }}
+      >
+        {[...links.map(({ key, href }) => ({ label: t(key), href })), { label: t("acknowledgements"), href: `/${locale}/acknowledgements` }].map(({ label, href }) => (
           <a
-            href={`/${locale}/acknowledgements`}
+            key={href}
+            href={href}
+            onClick={closeMenu}
             style={{
               color: "var(--text-muted)",
               textDecoration: "none",
-              fontSize: "0.8rem",
-              letterSpacing: "0.04em",
+              fontSize: "1rem",
+              fontWeight: 600,
+              padding: "14px 0",
+              borderBottom: "1px solid var(--border)",
+              display: "flex",
+              alignItems: "center",
+              gap: 10,
               transition: "color 0.15s ease",
-              fontWeight: 500,
             }}
-            onMouseEnter={(e) =>
-              ((e.target as HTMLElement).style.color = "var(--text)")
-            }
-            onMouseLeave={(e) =>
-              ((e.target as HTMLElement).style.color = "var(--text-muted)")
-            }
           >
-            {t("acknowledgements")}
+            <span className="mono" style={{ color: "var(--accent)", fontSize: "0.65rem" }}>→</span>
+            {label}
           </a>
-
-          {/* Lang switcher */}
-          <button
-            onClick={switchLocale}
-            className="mono"
-            style={{
-              background: "transparent",
-              border: "1px solid var(--border)",
-              color: "var(--accent)",
-              padding: "4px 10px",
-              borderRadius: 4,
-              fontSize: "0.7rem",
-              cursor: "pointer",
-              letterSpacing: "0.1em",
-              transition: "border-color 0.15s ease",
-              fontWeight: 700,
-            }}
-            onMouseEnter={(e) =>
-              ((e.target as HTMLElement).style.borderColor = "var(--accent)")
-            }
-            onMouseLeave={(e) =>
-              ((e.target as HTMLElement).style.borderColor = "var(--border)")
-            }
-          >
-            {t("switchLang")}
-          </button>
-        </div>
+        ))}
       </div>
-    </nav>
+
+      {/* Backdrop */}
+      {menuOpen && (
+        <div
+          onClick={closeMenu}
+          style={{
+            position: "fixed",
+            inset: 0,
+            zIndex: 98,
+            background: "rgba(0,0,0,0.4)",
+          }}
+        />
+      )}
+    </>
   );
 }

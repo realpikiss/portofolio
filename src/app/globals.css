@@ -143,29 +143,67 @@ body::before {
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
 }
 
-/* Mobile layout adjustments */
+/* ─── Mobile ─────────────────────────────────────────── */
 @media (max-width: 768px) {
-  /* Nav: hide text links, keep logo + lang switcher */
-  nav .nav-links { display: none; }
+  /* Nav */
+  .nav-desktop { display: none !important; }
+  .nav-mobile-right { display: flex !important; }
+  .nav-mobile-menu { display: flex !important; }
 
-  /* Two-column grids become single column */
+  /* Sections: reduce vertical padding */
+  section {
+    padding-top: 64px !important;
+    padding-bottom: 64px !important;
+  }
+
+  /* Two-column → one column */
   .grid-2col {
     grid-template-columns: 1fr !important;
     gap: 32px !important;
   }
 
-  /* Three-column skills grid becomes single column */
+  /* Three-column → one column */
   .grid-3col {
     grid-template-columns: 1fr !important;
+    gap: 16px !important;
   }
 
-  /* Featured project card: stack vertically */
+  /* Featured project card: hide right metrics panel, stack normally */
   .featured-grid {
     grid-template-columns: 1fr !important;
+    padding: 24px !important;
+    gap: 0 !important;
   }
+  .metrics-panel { display: none !important; }
 
-  /* Secondary projects: single column */
+  /* Secondary projects: one column */
   .secondary-grid {
     grid-template-columns: 1fr !important;
   }
+
+  /* Contact: hide terminal mockup on mobile */
+  .contact-terminal { display: none !important; }
+
+  /* Experience timeline: tighter */
+  .timeline-card {
+    padding: 16px !important;
+    margin-left: 12px !important;
+  }
+
+  /* Acknowledge cards: stack inner grid */
+  .ack-grid {
+    grid-template-columns: 1fr !important;
+    gap: 12px !important;
+  }
+
+  /* Project detail: tighter padding */
+  main { padding-left: 20px !important; padding-right: 20px !important; }
+
+  /* Architecture rows: stack on mobile */
+  .arch-row {
+    grid-template-columns: 1fr !important;
+    gap: 6px !important;
+  }
+  .arch-model-tag { display: none !important; }
 }
+

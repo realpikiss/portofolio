@@ -107,8 +107,8 @@ function FeaturedCard({ project, locale, viewProject }: { project: ProjectConten
           </span>
         </div>
 
-        {/* Right: metrics preview (if medcouncil) */}
-        <div style={{ display: "flex", flexDirection: "column", gap: 16, minWidth: 200 }}>
+        {/* Right: metrics preview (desktop only) */}
+        <div className="metrics-panel" style={{ display: "flex", flexDirection: "column", gap: 16, minWidth: 200 }}>
           {project.sections
             .find((s) => s.type === "metrics")
             ?.items?.slice(0, 3)

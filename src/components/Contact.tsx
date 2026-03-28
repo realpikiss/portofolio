@@ -124,8 +124,9 @@ export default function Contact() {
           </div>
         </div>
 
-        {/* Terminal input mockup */}
+        {/* Terminal input mockup (desktop only) */}
         <div
+          className="contact-terminal"
           style={{
             background: "var(--bg-card)",
             border: "1px solid var(--border)",

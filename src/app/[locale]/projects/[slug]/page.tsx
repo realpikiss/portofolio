@@ -122,7 +122,7 @@ export default async function ProjectPage({
                   )}
                   <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
                     {(section.items as ArchitectureAgent[]).map((agent) => (
-                      <div key={agent.name} style={{ display: "grid", gridTemplateColumns: "auto 1fr auto", gap: 16, alignItems: "center", background: "var(--bg-card)", border: `1px solid var(--border)`, borderRadius: 6, padding: "14px 20px" }}>
+                      <div key={agent.name} className="arch-row" style={{ display: "grid", gridTemplateColumns: "auto 1fr auto", gap: 16, alignItems: "center", background: "var(--bg-card)", border: `1px solid var(--border)`, borderRadius: 6, padding: "14px 20px" }}>
                         <span className="mono" style={{ fontSize: "0.72rem", color, fontWeight: 700, minWidth: 120 }}>
                           {agent.name}
                         </span>
@@ -130,7 +130,7 @@ export default async function ProjectPage({
                           {agent.role}
                         </span>
                         {agent.model && (
-                          <span className="mono" style={{ fontSize: "0.62rem", color: "var(--text-dim)", background: "#111", border: "1px solid var(--border)", padding: "2px 8px", borderRadius: 3, whiteSpace: "nowrap" }}>
+                          <span className="mono arch-model-tag" style={{ fontSize: "0.62rem", color: "var(--text-dim)", background: "#111", border: "1px solid var(--border)", padding: "2px 8px", borderRadius: 3, whiteSpace: "nowrap" }}>
                             {agent.model}
                           </span>
                         )}

@@ -40,7 +40,7 @@ export default function Experience() {
             </div>
 
             {/* Card */}
-            <div className="card-hover" style={{ background: "var(--bg-card)", border: "1px solid var(--border)", borderRadius: 8, padding: 24, marginLeft: 16 }}>
+            <div className="card-hover timeline-card" style={{ background: "var(--bg-card)", border: "1px solid var(--border)", borderRadius: 8, padding: 24, marginLeft: 16 }}>
               <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", marginBottom: 6, flexWrap: "wrap", gap: 8 }}>
                 <div>
                   <h3 style={{ fontWeight: 700, fontSize: "0.95rem", color: "var(--text)", marginBottom: 4 }}>
