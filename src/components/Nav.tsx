@@ -2,7 +2,7 @@
 
 import { useTranslations, useLocale } from "next-intl";
 import { useRouter, usePathname } from "next/navigation";
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect } from "react";
 
 export default function Nav() {
   const t = useTranslations("nav");
@@ -10,21 +10,12 @@ export default function Nav() {
   const router = useRouter();
   const pathname = usePathname();
   const [menuOpen, setMenuOpen] = useState(false);
-  const [hidden, setHidden] = useState(false);
-  const lastY = useRef(0);
+  const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
     const onScroll = () => {
-      const y = window.scrollY;
-      // Hide when scrolling down past 80px, show when scrolling up
-      if (y > 80) {
-        setHidden(y > lastY.current);
-      } else {
-        setHidden(false);
-      }
-      lastY.current = y;
-      // Close mobile menu on scroll
-      if (y > 10) setMenuOpen(false);
+      setScrolled(window.scrollY > 24);
+      if (window.scrollY > 10) setMenuOpen(false);
     };
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
@@ -56,11 +47,10 @@ export default function Nav() {
           left: 0,
           right: 0,
           zIndex: 100,
-          borderBottom: "1px solid #1a1a1a",
-          backdropFilter: "blur(12px)",
-          backgroundColor: "rgba(8,8,8,0.92)",
-          transform: hidden ? "translateY(-100%)" : "translateY(0)",
-          transition: "transform 0.3s ease",
+          borderBottom: `1px solid ${scrolled ? "#1a1a1a" : "transparent"}`,
+          backdropFilter: scrolled ? "blur(16px)" : "blur(0px)",
+          backgroundColor: scrolled ? "rgba(8,8,8,0.92)" : "rgba(8,8,8,0)",
+          transition: "background-color 0.4s ease, backdrop-filter 0.4s ease, border-color 0.4s ease",
         }}
       >
         <div
