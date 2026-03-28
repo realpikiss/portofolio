@@ -39,7 +39,7 @@
     },
     "dev": {
       "label": "Dev & Tools",
-      "items": ["Git", "SLURM / HPC / Linux Terminal" , "Next.js", "TypeScript", "Docker", "REST APIs"]
+      "items": ["Git", "SLURM / HPC / Linux Terminal", "Next.js", "TypeScript", "Docker", "REST APIs"]
     }
   },
   "experience": {
