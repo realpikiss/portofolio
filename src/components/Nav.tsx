@@ -2,7 +2,7 @@
 
 import { useTranslations, useLocale } from "next-intl";
 import { useRouter, usePathname } from "next/navigation";
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 
 export default function Nav() {
   const t = useTranslations("nav");
@@ -10,6 +10,25 @@ export default function Nav() {
   const router = useRouter();
   const pathname = usePathname();
   const [menuOpen, setMenuOpen] = useState(false);
+  const [hidden, setHidden] = useState(false);
+  const lastY = useRef(0);
+
+  useEffect(() => {
+    const onScroll = () => {
+      const y = window.scrollY;
+      // Hide when scrolling down past 80px, show when scrolling up
+      if (y > 80) {
+        setHidden(y > lastY.current);
+      } else {
+        setHidden(false);
+      }
+      lastY.current = y;
+      // Close mobile menu on scroll
+      if (y > 10) setMenuOpen(false);
+    };
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   const switchLocale = () => {
     const nextLocale = locale === "fr" ? "en" : "fr";
@@ -40,6 +59,8 @@ export default function Nav() {
           borderBottom: "1px solid #1a1a1a",
           backdropFilter: "blur(12px)",
           backgroundColor: "rgba(8,8,8,0.92)",
+          transform: hidden ? "translateY(-100%)" : "translateY(0)",
+          transition: "transform 0.3s ease",
         }}
       >
         <div
