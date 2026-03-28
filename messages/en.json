@@ -22,7 +22,7 @@
     "command": "cat about.md",
     "p1": "Research Assistant at the PRIME lab (Université de Moncton), working on the application of LLMs and Vision-Language Models for clinical decision support. My current project, MedCouncil, is a fully sovereign multi-agent system for clinical diagnosis.",
     "p2": "My background combines BI rigor — internships at UNI Financial Cooperation — with progressive immersion in AI research, first at Polytechnique Montréal's SWAT Lab, now at PRIME.",
-    "p3": "I'm also building lambdaTools, an early-stage AI agency to bring automation to SMBs. I'm joining UNI as BI Analyst in May 2026.",
+    "p3": "I'm also building lambdaTools, an early-stage AI agency to bring automation to SMBs.",
     "location": "Moncton, New Brunswick, Canada",
     "status": "Research Assistant @ PRIME"
   },
@@ -130,7 +130,7 @@
     "email": "Send an email",
     "linkedin": "LinkedIn",
     "github": "GitHub",
-    "availability": "Open to freelance mandates. Joining UNI Financial as BI Analyst in May 2026.",
+    "availability": "Open to freelance mandates, projects etc ... just hit me up !",
     "terminalSubject": "Collaboration",
     "terminalMessage": "Hello Vernet...",
     "terminalSent": "Message sent"
