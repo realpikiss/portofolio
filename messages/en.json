@@ -1,0 +1,182 @@
+{
+  "nav": {
+    "about": "About",
+    "skills": "Skills",
+    "experience": "Experience",
+    "projects": "Projects",
+    "contact": "Contact",
+    "acknowledgements": "Credits",
+    "switchLang": "FR"
+  },
+  "hero": {
+    "greeting": "Hey, I'm",
+    "name": "Vernet Adjobi",
+    "title": "BI Analyst & AI Builder",
+    "subtitle": "I turn data into actionable dashboards and build AI agents that automate real business processes.",
+    "cta": "See my work",
+    "ctaSecondary": "Get in touch",
+    "prompt": "~/portfolio $"
+  },
+  "about": {
+    "title": "About",
+    "command": "cat about.md",
+    "p1": "Research Assistant at the PRIME lab (Université de Moncton), working on the application of LLMs and Vision-Language Models for clinical decision support. My current project, MedCouncil, is a fully sovereign multi-agent system for clinical diagnosis.",
+    "p2": "My background combines BI rigor — internships at UNI Financial Cooperation — with progressive immersion in AI research, first at Polytechnique Montréal's SWAT Lab, now at PRIME.",
+    "p3": "I'm also building lambdaTools, an early-stage AI agency to bring automation to SMBs. I'm joining UNI as BI Analyst in May 2026.",
+    "location": "Moncton, New Brunswick, Canada",
+    "status": "Research Assistant @ PRIME"
+  },
+  "skills": {
+    "title": "Skills",
+    "command": "ls -la skills/",
+    "bi": {
+      "label": "BI & Data",
+      "items": ["SQL Server", "Power BI", "DAX", "Azure Data Factory", "IBM Cognos Analytics", "Advanced Excel"]
+    },
+    "ai": {
+      "label": "AI & LLM",
+      "items": ["Python", "LangGraph", "RAG / LangChain", "HuggingFace Transformers", "Vision-Language Models", "Prompt Engineering"]
+    },
+    "dev": {
+      "label": "Dev & Tools",
+      "items": ["Git", "SLURM / HPC / Linux Terminal" , "Next.js", "TypeScript", "Docker", "REST APIs"]
+    }
+  },
+  "experience": {
+    "title": "Experience",
+    "command": "cat experience.json",
+    "jobs": [
+      {
+        "company": "PRIME — Université de Moncton",
+        "companyUrl": "https://primeai.ca/",
+        "role": "Research Assistant",
+        "period": "Jan 2026 – present",
+        "location": "Moncton, NB",
+        "supervisor": "Prof. Moulay Akhloufi",
+        "supervisorLinkedin": "https://www.linkedin.com/in/akhloufi/",
+        "desc": "Applying LLMs, SLMs, and Vision-Language Models to medical diagnosis assistance. Building MedCouncil — a fully sovereign multi-agent clinical decision support system.",
+        "tags": ["LangGraph", "MedGemma 4B", "DeepSeek-R1", "SLURM", "HuggingFace", "Python"]
+      },
+      {
+        "company": "SWAT Lab — Polytechnique Montréal",
+        "companyUrl": "https://swat.polymtl.ca/",
+        "role": "Research Intern",
+        "period": "May – Dec 2025",
+        "location": "Montréal, QC",
+        "supervisor": "Prof. Foutse Khomh",
+        "supervisorLinkedin": "https://www.linkedin.com/in/khomh/",
+        "desc": "Selected from 301 applicants across 36 Canadian universities to explore the application of LLMs and RAG techniques for automated software vulnerability detection and repair.",
+        "tags": ["LLM", "RAG", "LangChain", "Python", "Static Analysis"]
+      },
+      {
+        "company": "UNI Financial Cooperation",
+        "companyUrl": "https://www.linkedin.com/company/uni-cooperation-financiere/",
+        "role": "Data Governance Analyst (Intern)",
+        "period": "Aug 2024 – Apr 2025",
+        "location": "Remote",
+        "supervisor": "Mathieu Brideau",
+        "supervisorLinkedin": "https://www.linkedin.com/in/mathieubrideau/",
+        "desc": "Developed technical documentation to standardize and accelerate OSFI regulatory reporting. Bridged raw data and compliance requirements by structuring data definitions, query logic, and reporting workflows used by the finance team.",
+        "tags": ["SQL Server", "IBM Cognos Analytics", "Excel", "Data Governance", "OSFI"]
+      },
+      {
+        "company": "UNI Financial Cooperation",
+        "companyUrl": "https://www.linkedin.com/company/uni-cooperation-financiere/",
+        "role": "Business Intelligence Intern",
+        "period": "May – Aug 2024",
+        "location": "Dieppe, NB",
+        "supervisor": "Mathieu Brideau",
+        "supervisorLinkedin": "https://www.linkedin.com/in/mathieubrideau/",
+        "desc": "Database refactoring and query optimization on SQL Server production environment. Redesigned table structures and indexing strategies, achieving 2x query performance improvement over 4 months.",
+        "tags": ["SQL Server", "Python", "Azure Data Factory"]
+      }
+    ]
+  },
+  "projects": {
+    "title": "Projects",
+    "command": "ls projects/ --sort=relevance",
+    "viewAll": "View all projects",
+    "viewProject": "Explore →",
+    "items": [
+      {
+        "slug": "medcouncil",
+        "title": "MedCouncil",
+        "desc": "Sovereign multi-agent clinical decision support system. 3 specialist urgency agents (MedGemma 4B) + 1 reasoning orchestrator (DeepSeek-R1). +26.7% top-3 accuracy in emergency medicine on 1,500 DDXPlus cases. 100% local, zero commercial APIs.",
+        "tags": ["LangGraph", "MedGemma 4B", "DeepSeek-R1", "H100", "SLURM"],
+        "highlight": true,
+        "status": "Research @ PRIME",
+        "color": "#00ff88"
+      },
+      {
+        "slug": "lambdatools",
+        "title": "lambdaTools",
+        "desc": "Early-stage AI agency for SMB automation. Designing custom LangGraph agents for workflow automation, API integrations, and productivity gains that actually ship.",
+        "tags": ["LangGraph", "Python", "Agents", "SMB"],
+        "highlight": false,
+        "status": "In development",
+        "color": "#f59e0b"
+      }
+    ]
+  },
+  "certifications": {
+    "title": "Certifications",
+    "command": "ls certifications/",
+    "items": []
+  },
+  "contact": {
+    "title": "Contact",
+    "command": "send --message",
+    "subtitle": "A project, an opportunity, a question?",
+    "email": "Send an email",
+    "linkedin": "LinkedIn",
+    "github": "GitHub",
+    "availability": "Open to freelance mandates. Joining UNI Financial as BI Analyst in May 2026.",
+    "terminalSubject": "Collaboration",
+    "terminalMessage": "Hello Vernet...",
+    "terminalSent": "Message sent"
+  },
+  "footer": {
+    "built": "Built with Next.js & Tailwind",
+    "rights": "All rights reserved"
+  },
+  "acknowledgements": {
+    "title": "Acknowledgements",
+    "command": "cat thanks.md",
+    "subtitle": "To those who trusted me before the CV was impressive.",
+    "institutions": [
+      {
+        "name": "PRIME",
+        "nameUrl": "https://primeai.ca/",
+        "university": "Université de Moncton",
+        "universityUrl": "https://www.umoncton.ca/",
+        "role": "Current research lab",
+        "desc": "Thank you to the PRIME lab, Université de Moncton, and Prof. Akhloufi for welcoming me as a Research Assistant, mentoring me, and guiding the development of MedCouncil.",
+        "person": "Prof. Moulay Akhloufi",
+        "personTitle": "Director, PRIME",
+        "personLinkedin": "https://www.linkedin.com/in/akhloufi/"
+      },
+      {
+        "name": "SWAT Lab",
+        "nameUrl": "https://swat.polymtl.ca/",
+        "university": "Polytechnique Montréal",
+        "universityUrl": "https://www.polymtl.ca/",
+        "role": "Research internship 2025",
+        "desc": "Thank you to the SWAT Lab, Prof. Khomh, and Polytechnique Montréal for selecting me from 301 applicants to join the team. This first immersion into AI research was a turning point in my trajectory.",
+        "person": "Prof. Foutse Khomh",
+        "personTitle": "SWAT Director, Canada Research Chair, IEEE Fellow",
+        "personLinkedin": "https://www.linkedin.com/in/khomh/"
+      },
+      {
+        "name": "UNI Financial Cooperation",
+        "nameUrl": "https://www.linkedin.com/company/uni-cooperation-financiere/",
+        "university": null,
+        "universityUrl": null,
+        "role": "Two internships — BI & Data Governance",
+        "desc": "Thank you to UNI for welcoming me twice — first in BI, then in Data Governance. This experience grounded my skills in a real, demanding business environment.",
+        "person": null,
+        "personTitle": null,
+        "personLinkedin": null
+      }
+    ]
+  }
+}

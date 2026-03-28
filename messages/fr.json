@@ -1,0 +1,182 @@
+{
+  "nav": {
+    "about": "À propos",
+    "skills": "Compétences",
+    "experience": "Expérience",
+    "projects": "Projets",
+    "contact": "Contact",
+    "acknowledgements": "Remerciements",
+    "switchLang": "EN"
+  },
+  "hero": {
+    "greeting": "Bonjour, je suis",
+    "name": "Vernet Adjobi",
+    "title": "BI Analyst & AI Builder",
+    "subtitle": "Je transforme les données en dashboards actionnables et je construis des agents IA pour automatiser les processus business.",
+    "cta": "Voir mes projets",
+    "ctaSecondary": "Me contacter",
+    "prompt": "~/portfolio $"
+  },
+  "about": {
+    "title": "À propos",
+    "command": "cat about.md",
+    "p1": "Research Assistant au laboratoire PRIME (Université de Moncton), \n je travaille sur l'application des LLMs et modèles vision-langage pour l'aide à la décision clinique. Mon projet actuel, MedCouncil, est un système multi-agents souverain pour le diagnostic médical.",
+    "p2": "Mon parcours combine la rigueur analytique du BI — stages chez UNI Coopération financière — et une immersion progressive dans la recherche IA, d'abord au SWAT Lab de Polytechnique Montréal, maintenant chez PRIME.",
+    "p3": "Je développe en parallèle lambdaTools, une agence IA en structuration pour apporter l'automatisation aux PMEs.",
+    "location": "Moncton, Nouveau-Brunswick, Canada",
+    "status": "Research Assistant @ PRIME"
+  },
+  "skills": {
+    "title": "Compétences",
+    "command": "ls -la skills/",
+    "bi": {
+      "label": "BI & Data",
+      "items": ["SQL Server", "Power BI", "DAX", "Azure Data Factory", "IBM Cognos Analytics", "Excel avancé"]
+    },
+    "ai": {
+      "label": "AI & LLM",
+      "items": ["Python", "LangGraph", "RAG / LangChain", "HuggingFace Transformers", "Vision-Language Models", "Prompt engineering"]
+    },
+    "dev": {
+      "label": "Dev & Outils",
+      "items": ["Git", "SLURM / HPC / Terminal Linux", "Next.js", "TypeScript", "Docker", "REST APIs"]
+    }
+  },
+  "experience": {
+    "title": "Expérience",
+    "command": "cat experience.json",
+    "jobs": [
+      {
+        "company": "PRIME — Université de Moncton",
+        "companyUrl": "https://primeai.ca/",
+        "role": "Research Assistant",
+        "period": "Janv 2026 – présent",
+        "location": "Moncton, NB",
+        "supervisor": "Prof. Moulay Akhloufi",
+        "supervisorLinkedin": "https://www.linkedin.com/in/akhloufi/",
+        "desc": "Application des LLMs, SLMs et Vision-Language Models pour l'assistance au diagnostic médical. Développement de MedCouncil, un système multi-agents souverain d'aide au diagnostic clinique.",
+        "tags": ["LangGraph", "MedGemma 4B", "DeepSeek-R1", "SLURM", "HuggingFace", "Python"]
+      },
+      {
+        "company": "SWAT Lab — Polytechnique Montréal",
+        "companyUrl": "https://swat.polymtl.ca/",
+        "role": "Research Intern",
+        "period": "Mai – Déc 2025",
+        "location": "Montréal, QC",
+        "supervisor": "Prof. Foutse Khomh",
+        "supervisorLinkedin": "https://www.linkedin.com/in/khomh/",
+        "desc": "Sélectionné parmi 301 candidats de 36 universités canadiennes pour explorer l'application des LLMs et techniques RAG pour la détection et correction automatique de vulnérabilités logicielles.",
+        "tags": ["LLM", "RAG", "LangChain", "Python", "Static Analysis"]
+      },
+      {
+        "company": "UNI Coopération financière",
+        "companyUrl": "https://www.linkedin.com/company/uni-cooperation-financiere/",
+        "role": "Data Governance Analyst (Stage)",
+        "period": "Août 2024 – Avr 2025",
+        "location": "Remote",
+        "supervisor": "Mathieu Brideau",
+        "supervisorLinkedin": "https://www.linkedin.com/in/mathieubrideau/",
+        "desc": "Développement de la documentation technique pour standardiser et accélérer le reporting réglementaire BSIF. Structuration des définitions de données, de la logique de requêtes et des workflows de reporting utilisés par l'équipe finance.",
+        "tags": ["SQL Server", "IBM Cognos Analytics", "Excel", "Data Governance", "BSIF"]
+      },
+      {
+        "company": "UNI Coopération financière",
+        "companyUrl": "https://www.linkedin.com/company/uni-cooperation-financiere/",
+        "role": "Business Intelligence Intern (Stage)",
+        "period": "Mai – Août 2024",
+        "location": "Dieppe, NB",
+        "supervisor": "Mathieu Brideau",
+        "supervisorLinkedin": "https://www.linkedin.com/in/mathieubrideau/",
+        "desc": "Refactorisation de base de données et optimisation de requêtes sur l'environnement SQL Server de production. Révision des structures de tables et stratégies d'indexation — amélioration de 2x des performances de requêtes sur 4 mois.",
+        "tags": ["SQL Server", "Python", "Azure Data Factory"]
+      }
+    ]
+  },
+  "projects": {
+    "title": "Projets",
+    "command": "ls projects/ --sort=relevance",
+    "viewAll": "Voir tous les projets",
+    "viewProject": "Explorer →",
+    "items": [
+      {
+        "slug": "medcouncil",
+        "title": "MedCouncil",
+        "desc": "Système multi-agents souverain d'aide au diagnostic clinique. 3 agents spécialistes (MedGemma 4B) + 1 orchestrateur raisonneur (DeepSeek-R1). +26.7% de précision top-3 en médecine d'urgence sur 1 500 cas DDXPlus. 100% local, zéro API commerciale.",
+        "tags": ["LangGraph", "MedGemma 4B", "DeepSeek-R1", "H100", "SLURM"],
+        "highlight": true,
+        "status": "Research @ PRIME",
+        "color": "#00ff88"
+      },
+      {
+        "slug": "lambdatools",
+        "title": "lambdaTools",
+        "desc": "Agence IA en structuration pour PMEs. Conception d'agents d'automatisation sur mesure avec LangGraph — workflows répétitifs, intégrations API, gains de productivité concrets.",
+        "tags": ["LangGraph", "Python", "Agents", "PME"],
+        "highlight": false,
+        "status": "En structuration",
+        "color": "#f59e0b"
+      }
+    ]
+  },
+  "certifications": {
+    "title": "Certifications",
+    "command": "ls certifications/",
+    "items": []
+  },
+  "contact": {
+    "title": "Contact",
+    "command": "send --message",
+    "subtitle": "Un projet, une opportunité, une question ?",
+    "email": "Envoyer un email",
+    "linkedin": "LinkedIn",
+    "github": "GitHub",
+    "availability": "Disponible pour des mandats freelance. Prise de poste Analyste BI chez UNI · mai 2026.",
+    "terminalSubject": "Collaboration",
+    "terminalMessage": "Bonjour Vernet...",
+    "terminalSent": "Message envoyé"
+  },
+  "footer": {
+    "built": "Construit avec Next.js & Tailwind",
+    "rights": "Tous droits réservés"
+  },
+  "acknowledgements": {
+    "title": "Remerciements",
+    "command": "cat thanks.md",
+    "subtitle": "À ceux qui m'ont fait confiance avant que le CV soit impressionnant.",
+    "institutions": [
+      {
+        "name": "PRIME",
+        "nameUrl": "https://primeai.ca/",
+        "university": "Université de Moncton",
+        "universityUrl": "https://www.umoncton.ca/",
+        "role": "Laboratoire de recherche actuel",
+        "desc": "Merci au laboratoire PRIME, à l'Université de Moncton et au professeur Akhloufi de m'avoir accueilli comme Research Assistant, mentoré et guidé  dans le developpement de MedCouncil.",
+        "person": "Prof. Moulay Akhloufi",
+        "personTitle": "Directeur, PRIME",
+        "personLinkedin": "https://www.linkedin.com/in/akhloufi/"
+      },
+      {
+        "name": "SWAT Lab",
+        "nameUrl": "https://swat.polymtl.ca/",
+        "university": "Polytechnique Montréal",
+        "universityUrl": "https://www.polymtl.ca/",
+        "role": "Stage de recherche 2025",
+        "desc": "Merci au SWAT Lab au professeur Khomh et à Polytechnique Montréal de m'avoir sélectionné parmi 301 candidats pour rejoindre l'équipe. Cette première immersion dans la recherche IA a été déterminante dans mon parcours.",
+        "person": "Prof. Foutse Khomh",
+        "personTitle": "Directeur SWAT, Canada Research Chair, IEEE Fellow",
+        "personLinkedin": "https://www.linkedin.com/in/khomh/"
+      },
+      {
+        "name": "UNI Coopération financière",
+        "nameUrl": "https://www.linkedin.com/company/uni-cooperation-financiere/",
+        "university": null,
+        "universityUrl": null,
+        "role": "Deux stages — BI & Data Governance",
+        "desc": "Merci à UNI de m'avoir accueilli deux fois, d'abord en BI puis en Data Governance. Cette expérience a ancré mes compétences dans un contexte business réel et exigeant.",
+        "person": null,
+        "personTitle": null,
+        "personLinkedin": null
+      }
+    ]
+  }
+}

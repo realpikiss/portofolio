@@ -1,26 +1,171 @@
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=JetBrains+Mono:ital,wght@0,300;0,400;0,500;0,700;1,400&display=swap');
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --bg: #080808;
+  --bg-secondary: #111111;
+  --bg-card: #0e0e0e;
+  --border: #1e1e1e;
+  --border-hover: #2e2e2e;
+  --text: #e8e8e8;
+  --text-muted: #666666;
+  --text-dim: #444444;
+  --accent: #00ff88;
+  --accent-dim: rgba(0, 255, 136, 0.08);
+  --accent-glow: rgba(0, 255, 136, 0.2);
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
+  scrollbar-width: thin;
+  scrollbar-color: #1e1e1e #080808;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--bg);
+  color: var(--text);
+  font-family: 'Syne', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+/* Scanline overlay */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 2px,
+    rgba(0, 0, 0, 0.025) 2px,
+    rgba(0, 0, 0, 0.025) 4px
+  );
+  pointer-events: none;
+  z-index: 9999;
+}
+
+.mono {
+  font-family: 'JetBrains Mono', monospace;
+}
+
+.tag {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.65rem;
+  background: var(--accent-dim);
+  color: var(--accent);
+  border: 1px solid rgba(0, 255, 136, 0.15);
+  padding: 2px 8px;
+  border-radius: 3px;
+  letter-spacing: 0.05em;
+}
+
+.cmd-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.7rem;
+  color: var(--accent);
+  letter-spacing: 0.05em;
+}
+
+.cmd-label::before {
+  content: '> ';
+  color: #444;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+.cursor::after {
+  content: '▊';
+  color: var(--accent);
+  animation: blink 1.2s step-end infinite;
+  margin-left: 3px;
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.animate-in { animation: fadeInUp 0.6s ease forwards; }
+.delay-1 { animation-delay: 0.1s; opacity: 0; }
+.delay-2 { animation-delay: 0.25s; opacity: 0; }
+.delay-3 { animation-delay: 0.4s; opacity: 0; }
+.delay-4 { animation-delay: 0.55s; opacity: 0; }
+.delay-5 { animation-delay: 0.7s; opacity: 0; }
+.delay-6 { animation-delay: 0.85s; opacity: 0; }
+
+.status-dot::before {
+  content: '●';
+  color: var(--accent);
+  margin-right: 6px;
+  font-size: 0.5rem;
+  vertical-align: middle;
+  animation: blink 2.5s ease-in-out infinite;
+}
+
+.link-dim {
+  color: var(--text-dim);
+  text-decoration: none;
+  transition: color 0.15s ease;
+}
+.link-dim:hover { color: var(--accent); }
+
+.link-muted {
+  color: var(--text-muted);
+  text-decoration: none;
+  transition: color 0.15s ease;
+}
+.link-muted:hover { color: var(--text); }
+
+.link-accent {
+  color: var(--accent);
+  text-decoration: none;
+  transition: opacity 0.15s ease;
+}
+.link-accent:hover { opacity: 0.7; }
+
+/* Card hover — used on experience, skills, and project cards */
+.card-hover {
+  transition: border-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+.card-hover:hover {
+  border-color: var(--border-hover) !important;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+}
+
+/* Mobile layout adjustments */
+@media (max-width: 768px) {
+  /* Nav: hide text links, keep logo + lang switcher */
+  nav .nav-links { display: none; }
+
+  /* Two-column grids become single column */
+  .grid-2col {
+    grid-template-columns: 1fr !important;
+    gap: 32px !important;
+  }
+
+  /* Three-column skills grid becomes single column */
+  .grid-3col {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Featured project card: stack vertically */
+  .featured-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Secondary projects: single column */
+  .secondary-grid {
+    grid-template-columns: 1fr !important;
+  }
 }
