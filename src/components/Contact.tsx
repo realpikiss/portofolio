@@ -65,7 +65,7 @@ export default function Contact() {
 
           <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
             {[
-              { label: t("email"), icon: "✉", href: "mailto:hello@vernet.dev" },
+              { label: t("email"), icon: "✉", href: "mailto:emmanueladjobi@icloud.com" },
               { label: t("linkedin"), icon: "in", href: "https://www.linkedin.com/in/vernet-emmanuel-adjobi-4a491b223/" },
               { label: t("github"), icon: "gh", href: "https://github.com/realpikiss" },
             ].map(({ label, icon, href }) => (
