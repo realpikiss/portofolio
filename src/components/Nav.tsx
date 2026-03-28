@@ -41,17 +41,7 @@ export default function Nav() {
   return (
     <>
       <nav
-        style={{
-          position: "fixed",
-          top: 0,
-          left: 0,
-          right: 0,
-          zIndex: 100,
-          borderBottom: `1px solid ${scrolled ? "#1a1a1a" : "transparent"}`,
-          backdropFilter: scrolled ? "blur(16px)" : "blur(0px)",
-          backgroundColor: scrolled ? "rgba(8,8,8,0.92)" : "rgba(8,8,8,0)",
-          transition: "background-color 0.4s ease, backdrop-filter 0.4s ease, border-color 0.4s ease",
-        }}
+        className={scrolled ? "nav-scrolled" : "nav-top"}
       >
         <div
           style={{
