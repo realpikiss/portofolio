@@ -19,11 +19,11 @@ export default function Nav() {
   };
 
   const links = [
-    { key: "about", href: "#about" },
-    { key: "skills", href: "#skills" },
-    { key: "experience", href: "#experience" },
-    { key: "projects", href: "#projects" },
-    { key: "contact", href: "#contact" },
+    { key: "about", href: `/${locale}#about` },
+    { key: "skills", href: `/${locale}#skills` },
+    { key: "experience", href: `/${locale}#experience` },
+    { key: "projects", href: `/${locale}#projects` },
+    { key: "contact", href: `/${locale}#contact` },
   ] as const;
 
   const closeMenu = () => setMenuOpen(false);
