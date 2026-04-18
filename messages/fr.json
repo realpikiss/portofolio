@@ -101,20 +101,11 @@
       {
         "slug": "medcouncil",
         "title": "MedCouncil",
-        "desc": "Système multi-agents souverain d'aide au diagnostic clinique. 3 agents spécialistes (MedGemma 4B) + 1 orchestrateur raisonneur (DeepSeek-R1). +26.7% de précision top-3 en médecine d'urgence sur 1 500 cas DDXPlus. 100% local, zéro API commerciale.",
-        "tags": ["LangGraph", "MedGemma 4B", "DeepSeek-R1", "H100", "SLURM"],
+        "desc": "Système multi-agents souverain d'aide au diagnostic clinique, développé au laboratoire PRIME (Université de Moncton). Détails techniques sous accord de confidentialité.",
+        "tags": ["LangGraph", "Python", "LLM", "Multi-agents"],
         "highlight": true,
         "status": "Research @ PRIME",
         "color": "#00ff88"
-      },
-      {
-        "slug": "lambdatools",
-        "title": "lambdaTools",
-        "desc": "Agence IA en structuration pour PMEs. Conception d'agents d'automatisation sur mesure avec LangGraph — workflows répétitifs, intégrations API, gains de productivité concrets.",
-        "tags": ["LangGraph", "Python", "Agents", "PME"],
-        "highlight": false,
-        "status": "En structuration",
-        "color": "#f59e0b"
       }
     ]
   },

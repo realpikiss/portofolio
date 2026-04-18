@@ -101,20 +101,11 @@
       {
         "slug": "medcouncil",
         "title": "MedCouncil",
-        "desc": "Sovereign multi-agent clinical decision support system. 3 specialist urgency agents (MedGemma 4B) + 1 reasoning orchestrator (DeepSeek-R1). +26.7% top-3 accuracy in emergency medicine on 1,500 DDXPlus cases. 100% local, zero commercial APIs.",
-        "tags": ["LangGraph", "MedGemma 4B", "DeepSeek-R1", "H100", "SLURM"],
+        "desc": "Sovereign multi-agent clinical decision support system developed at PRIME Lab (Université de Moncton). Technical details under confidentiality agreement.",
+        "tags": ["LangGraph", "Python", "LLM", "Multi-agent"],
         "highlight": true,
         "status": "Research @ PRIME",
         "color": "#00ff88"
-      },
-      {
-        "slug": "lambdatools",
-        "title": "lambdaTools",
-        "desc": "Early-stage AI agency for SMB automation. Designing custom LangGraph agents for workflow automation, API integrations, and productivity gains that actually ship.",
-        "tags": ["LangGraph", "Python", "Agents", "SMB"],
-        "highlight": false,
-        "status": "In development",
-        "color": "#f59e0b"
       }
     ]
   },

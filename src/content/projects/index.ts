@@ -3,11 +3,9 @@ import type { ProjectContent } from "@/content/types";
 const projectRegistry: Record<string, Record<string, () => Promise<{ default: ProjectContent }>>> = {
   fr: {
     medcouncil: () => import("./fr/medcouncil"),
-    lambdatools: () => import("./fr/lambdatools"),
   },
   en: {
     medcouncil: () => import("./en/medcouncil"),
-    lambdatools: () => import("./en/lambdatools"),
   },
 };
 
